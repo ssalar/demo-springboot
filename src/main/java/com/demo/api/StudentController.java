@@ -7,7 +7,10 @@ package com.demo.api;
 import com.demo.models.Student;
 import com.demo.service.StudentService;
 import java.util.List;
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -37,6 +40,11 @@ public class StudentController {
     @GetMapping
     public List<Student> listStudents(){
         return service.listStudents();
+    }
+    
+    @DeleteMapping({"id"})
+    public boolean deleteStudent( Student student) {
+        return service.deleteStudent(student);
     }
     
     
