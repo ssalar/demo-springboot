@@ -7,6 +7,7 @@ package com.demo.dao;
 import com.demo.models.Student;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -19,7 +20,7 @@ public class StudentDaoImpl implements StudentDao{
     private List<Student> students = new ArrayList<>();
     
     @Override
-    public Student addStudent(Student student, int id) {
+    public Student addStudent(Student student, UUID id) {
         students.add(new Student(id, student.getFirstName(), student.getLastName()));
         return student;
     }

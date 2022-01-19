@@ -26,9 +26,7 @@ public class Student {
     private String lastName;
 
 
-    public Student( UUID  id , String firstName, String lastName) {
-
-    public Student(@JsonProperty("id") int id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
+    public Student(@JsonProperty("UUID") UUID id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
