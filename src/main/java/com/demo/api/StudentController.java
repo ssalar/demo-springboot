@@ -44,12 +44,12 @@ public class StudentController {
         return service.listStudents();
     }
     
-//    @DeleteMapping(path = {"id"})
-//    public boolean deleteStudent(@PathVariable("id") int id) {
-//        return service.deleteStudent(id);
-//    }
+    @DeleteMapping(path = "{id}")
+    public void deleteStudent(@PathVariable("id") int id) {
+        service.deleteStudent(id);
+    }
     
-    @GetMapping(path = {"id"})
+    @GetMapping(path = "{id}")
     public Student getStudentById(@PathVariable("id") int id){
         return service.selectStudentById(id)
                 .orElse(null);

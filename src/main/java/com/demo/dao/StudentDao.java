@@ -17,9 +17,8 @@ public interface StudentDao {
     
     Student addStudent(Student student, int id);
     List<Student> listStudent();
-    boolean deleteStudent (int id);
+    int deleteStudent (int id);
     
-    boolean updateStudentById(int id, Student student);
     Optional<Student> selectStudentById(int id);
     
 }

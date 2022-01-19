@@ -33,7 +33,7 @@ public class StudentService {
         return studentdao.listStudent();
     }
     
-    public boolean deleteStudent (int id) {
+    public int deleteStudent (int id) {
     	return studentdao.deleteStudent(id);
     }
     

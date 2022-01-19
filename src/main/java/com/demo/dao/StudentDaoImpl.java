@@ -32,20 +32,16 @@ public class StudentDaoImpl implements StudentDao{
     }
 
     @Override
-    public boolean deleteStudent(int id) {
+    public int deleteStudent(int id) {
 	for (Student student : students) {
             if (student.getId()== id) {
                 students.remove(student);
-                    return true;
+                    return 1;
 		}
 	}
-	return false;
+	return 0;
     }
 
-    @Override
-    public boolean updateStudentById(int id, Student student) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
     public Optional<Student> selectStudentById(int id) {
