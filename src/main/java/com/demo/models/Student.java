@@ -4,6 +4,7 @@
  */
 package com.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.logging.Logger;
 
 /**
@@ -15,7 +16,7 @@ public class Student {
     private String firstName;
     private String lastName;
 
-    public Student(int id, String firstName, String lastName) {
+    public Student(@JsonProperty("id") int id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
