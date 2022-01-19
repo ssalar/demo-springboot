@@ -4,6 +4,11 @@
  */
 package com.demo.models;
 
+import java.util.List;
+import java.util.UUID;
+
+import javax.validation.constraints.NotBlank;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.logging.Logger;
 
@@ -12,9 +17,16 @@ import java.util.logging.Logger;
  * @author ssalar
  */
 public class Student {
-    private int id;
+    private UUID id;
+    
+    @NotBlank
     private String firstName;
+    
+    @NotBlank
     private String lastName;
+
+
+    public Student( UUID  id , String firstName, String lastName) {
 
     public Student(@JsonProperty("id") int id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
         this.id = id;
@@ -22,11 +34,11 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
@@ -45,5 +57,15 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    
+}
     
 }
