@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * @author ssalar
  */
 public class Student {
-    private UUID id;
+    private int id;
     
     @NotBlank
     private String firstName;
@@ -26,17 +26,17 @@ public class Student {
     private String lastName;
 
 
-    public Student(@JsonProperty("UUID") UUID id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
+    public Student(@JsonProperty("id") int id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

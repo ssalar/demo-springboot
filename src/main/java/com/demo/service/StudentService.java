@@ -7,6 +7,7 @@ package com.demo.service;
 import com.demo.dao.StudentDao;
 import com.demo.models.Student;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,7 +33,11 @@ public class StudentService {
         return studentdao.listStudent();
     }
     
-    public boolean deleteStudent (Student student) {
-    	return studentdao.deleteStudent(student.getId());
+    public boolean deleteStudent (int id) {
+    	return studentdao.deleteStudent(id);
+    }
+    
+    public Optional<Student> selectStudentById(int id){
+        return studentdao.selectStudentById(id);
     }
 }
