@@ -4,10 +4,31 @@
  */
 package com.demo.service;
 
+import com.demo.dao.StudentDao;
+import com.demo.models.Student;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author ssalar
  */
+@Service
 public class StudentService {
     
+    private final StudentDao studentdao;
+    
+    @Autowired
+    public StudentService(StudentDao studentdao){
+        this.studentdao = studentdao;
+    }
+    
+    public Student addStudent(Student student){
+        return studentdao.addStudent(student, student.getId());
+    }
+    
+    public List<Student> listStudents(){
+        return studentdao.listStudent();
+    }
 }
