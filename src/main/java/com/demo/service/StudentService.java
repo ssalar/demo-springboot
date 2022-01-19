@@ -31,4 +31,8 @@ public class StudentService {
     public List<Student> listStudents(){
         return studentdao.listStudent();
     }
+    
+    public boolean deleteStudent (Student student) {
+    	return studentdao.deleteStudent(student.getId());
+    }
 }
