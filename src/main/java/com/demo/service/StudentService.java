@@ -40,4 +40,9 @@ public class StudentService {
     public Optional<Student> selectStudentById(int id){
         return studentdao.selectStudentById(id);
     }
+   
+
+	public int updateStudentById(int id, Student student) {
+		return studentdao.updateStudentById(id,student);
+	}
 }

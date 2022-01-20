@@ -16,9 +16,14 @@ import java.util.UUID;
 public interface StudentDao {
     
     Student addStudent(Student student, int id);
+    
     List<Student> listStudent();
+    
     int deleteStudent (int id);
     
     Optional<Student> selectStudentById(int id);
     
+   
+
+int updateStudentById(int id, Student student);
 }
