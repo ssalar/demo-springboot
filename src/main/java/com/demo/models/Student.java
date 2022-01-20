@@ -17,16 +17,17 @@ import java.util.logging.Logger;
  * @author ssalar
  */
 public class Student {
-    private UUID id;
+    
+	private  UUID id;
     
     @NotBlank
-    private String firstName;
+    private  String firstName;
     
     @NotBlank
-    private String lastName;
+    private  String lastName;
 
 
-    public Student(@JsonProperty("UUID") UUID id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
+    public Student(@JsonProperty("id") UUID id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

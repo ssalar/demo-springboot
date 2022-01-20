@@ -21,7 +21,7 @@ public class StudentDaoImpl implements StudentDao{
     
     @Override
     public Student addStudent(Student student, UUID id) {
-        students.add(new Student(id, student.getFirstName(), student.getLastName()));
+        students.add(new Student(student.getId(), student.getFirstName(), student.getLastName()));
         return student;
     }
 
