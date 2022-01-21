@@ -20,10 +20,10 @@ public class Student {
     private int id;
     
     @NotBlank
-    private String firstName;
+    private  String firstName;
     
     @NotBlank
-    private String lastName;
+    private  String lastName;
 
 
     public Student(@JsonProperty("id") int id, @JsonProperty("firstName") String firstName, @JsonProperty("lastName") String lastName) {
