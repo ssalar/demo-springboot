@@ -7,11 +7,13 @@ package com.demo.api;
 import com.demo.models.Student;
 import com.demo.service.StudentService;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,12 +44,15 @@ public class StudentController {
         return service.listStudents();
     }
     
-    @DeleteMapping({"id"})
-    public boolean deleteStudent( Student student) {
-        return service.deleteStudent(student);
+    @DeleteMapping(path = "{id}")
+    public void deleteStudent(@PathVariable("id") int id) {
+        service.deleteStudent(id);
     }
     
-    
-    
+    @GetMapping(path = "{id}")
+    public Student getStudentById(@PathVariable("id") int id){
+        return service.selectStudentById(id)
+                .orElse(null);
+    }
     
 }

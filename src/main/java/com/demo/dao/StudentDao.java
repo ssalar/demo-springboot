@@ -6,6 +6,7 @@ package com.demo.dao;
 
 import com.demo.models.Student;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -14,8 +15,10 @@ import java.util.UUID;
  */
 public interface StudentDao {
     
-    Student addStudent(Student student, UUID id);
+    Student addStudent(Student student, int id);
     List<Student> listStudent();
-    boolean deleteStudent (UUID id);
+    int deleteStudent (int id);
+    
+    Optional<Student> selectStudentById(int id);
     
 }
