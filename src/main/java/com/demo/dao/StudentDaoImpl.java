@@ -49,5 +49,31 @@ public class StudentDaoImpl implements StudentDao{
                 .filter(student -> student.getId() == id)
                 .findFirst();
     }
+    
+    @Override
+    public  int updateStudentById(int id,Student student){
+    	/*return selectStudentById(id)
+    			.map(s ->{
+    				int indexOfStudenttoDelete = student.indexOf(student);
+    				if (indexOfStudenttoDelete >= 0) {
+    					student.set(indexOfStudenttoDelete,student);
+    					return 1;
+    				}
+    				return 0;
+    			})
+    			,orElse (id: 0);
+        	
+        }*/
+    	
+    	for (Student currstudent:students ) {
+    		if (currstudent.getId()== id) {
+    			currstudent.setFirstName (student.getFirstName());
+    			return 1;
+    		}
+    		
+    	}
+    	return 0;
+    		
+    	}
 
 }
